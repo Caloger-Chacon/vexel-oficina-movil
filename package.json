@@ -1,0 +1,8 @@
+{
+  "name": "vexel-oficina-movil",
+  "version": "1.0.0",
+  "private": true,
+  "description": "VEXEL Oficina - sala de control movil de solo lectura (PWA) con PIN",
+  "scripts": { "start": "node publish/server-pin.mjs" },
+  "engines": { "node": ">=20" }
+}
