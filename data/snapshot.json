@@ -1,0 +1,227 @@
+{
+ "business": "VEXEL Studio",
+ "areas": [
+  {
+   "id": "direccion",
+   "name": "Dirección",
+   "color": "#eab308"
+  },
+  {
+   "id": "marketing",
+   "name": "Marketing",
+   "color": "#f97316"
+  },
+  {
+   "id": "diseno-video",
+   "name": "Diseño y Video",
+   "color": "#a78bfa"
+  },
+  {
+   "id": "mentoria",
+   "name": "Consejos y Mentoría",
+   "color": "#22d3ee"
+  },
+  {
+   "id": "comercial",
+   "name": "Comercial",
+   "color": "#34d399"
+  },
+  {
+   "id": "operaciones",
+   "name": "Operaciones",
+   "color": "#f43f5e"
+  },
+  {
+   "id": "finanzas",
+   "name": "Finanzas",
+   "color": "#84cc16"
+  },
+  {
+   "id": "legal",
+   "name": "Legal y Cumplimiento",
+   "color": "#94a3b8"
+  },
+  {
+   "id": "personas",
+   "name": "Personas y Talento",
+   "color": "#ec4899"
+  }
+ ],
+ "agents": [
+  {
+   "id": "ciro",
+   "name": "Ciro",
+   "area": "Dirección",
+   "role": "Jefe de la oficina",
+   "description": "Recibe la solicitud, elige el área correcta y controla que la entrega tenga sentido.",
+   "status": "idle",
+   "inbox": 4,
+   "last_task": "En que año nacio simon bolivar?",
+   "updatedAt": "2026-10-22T14:13:26.025Z"
+  },
+  {
+   "id": "marketing-lead",
+   "name": "Director de Marketing",
+   "area": "Marketing",
+   "role": "Marketing, contenido y marca",
+   "description": "Copy, SEO, campañas, redes sociales, email y briefs visuales.",
+   "status": "idle",
+   "inbox": 0,
+   "last_task": null,
+   "updatedAt": null
+  },
+  {
+   "id": "design-lead",
+   "name": "Director Creativo",
+   "area": "Diseño y Video",
+   "role": "Diseño, video y piezas",
+   "description": "Dirección de arte, guiones, edición, formatos y propuestas visuales.",
+   "status": "idle",
+   "inbox": 0,
+   "last_task": null,
+   "updatedAt": null
+  },
+  {
+   "id": "mentor-lead",
+   "name": "Mentor de Negocio",
+   "area": "Consejos y Mentoría",
+   "role": "Coach y criterio de negocio",
+   "description": "Negocio, estrategia, ventas, contenido, operaciones, finanzas, liderazgo y producto.",
+   "status": "idle",
+   "inbox": 0,
+   "last_task": null,
+   "updatedAt": null
+  },
+  {
+   "id": "commercial-lead",
+   "name": "Director Comercial",
+   "area": "Comercial",
+   "role": "Ventas, prospección y propuestas",
+   "description": "Prospección, cualificación, llamadas, objeciones, cierre y propuestas.",
+   "status": "idle",
+   "inbox": 0,
+   "last_task": null,
+   "updatedAt": null
+  },
+  {
+   "id": "ops-lead",
+   "name": "Director de Operaciones",
+   "area": "Operaciones",
+   "role": "Automatización, datos y soporte",
+   "description": "Automatizaciones, integraciones, CRM, reporting, incidencias, QA y documentación.",
+   "status": "idle",
+   "inbox": 0,
+   "last_task": null,
+   "updatedAt": null
+  },
+  {
+   "id": "billing-admin",
+   "name": "Billing & Admin",
+   "area": "Operaciones",
+   "role": "Facturación y admin",
+   "description": "Facturas, cobros, planes y seguimiento administrativo.",
+   "status": "idle",
+   "inbox": 0,
+   "last_task": null,
+   "updatedAt": null
+  },
+  {
+   "id": "finance-lead",
+   "name": "CFO",
+   "area": "Finanzas",
+   "role": "Dirección financiera",
+   "description": "Caja, runway, modelos, control de gestión y pricing.",
+   "status": "idle",
+   "inbox": 0,
+   "last_task": null,
+   "updatedAt": null
+  },
+  {
+   "id": "legal-lead",
+   "name": "Legal y Cumplimiento",
+   "area": "Legal y Cumplimiento",
+   "role": "Contratos, datos y obligaciones",
+   "description": "Contratos, términos, propiedad intelectual, privacidad, licencias y cumplimiento.",
+   "status": "idle",
+   "inbox": 0,
+   "last_task": null,
+   "updatedAt": null
+  },
+  {
+   "id": "people-lead",
+   "name": "People Lead",
+   "area": "Personas y Talento",
+   "role": "Equipo, cultura y formación",
+   "description": "Reclutamiento, incorporación, clima, feedback, formación y playbooks.",
+   "status": "idle",
+   "inbox": 0,
+   "last_task": null,
+   "updatedAt": null
+  }
+ ],
+ "messages": [
+  {
+   "from": "linkedin-writer",
+   "to": "visual-assets",
+   "at": null
+  },
+  {
+   "from": "ciro",
+   "to": "visual-assets",
+   "at": null
+  },
+  {
+   "from": "reporting",
+   "to": "ciro",
+   "at": null
+  },
+  {
+   "from": "reporting",
+   "to": "ciro",
+   "at": null
+  },
+  {
+   "from": "linkedin-writer",
+   "to": "visual-assets",
+   "at": null
+  },
+  {
+   "from": "visual-assets",
+   "to": "campaign-manager",
+   "at": null
+  },
+  {
+   "from": "campaign-manager",
+   "to": "tiktok-scriptwriter",
+   "at": null
+  },
+  {
+   "from": "tiktok-scriptwriter",
+   "to": "visual-assets",
+   "at": null
+  },
+  {
+   "from": "visual-assets",
+   "to": "campaign-manager",
+   "at": null
+  },
+  {
+   "from": "campaign-manager",
+   "to": "tiktok-scriptwriter",
+   "at": null
+  },
+  {
+   "from": "reporting",
+   "to": "ciro",
+   "at": null
+  },
+  {
+   "from": "reporting",
+   "to": "ciro",
+   "at": null
+  }
+ ],
+ "fetchedAt": "2026-11-20T20:46:40.313Z",
+ "source": "snapshot",
+ "redacted": false
+}

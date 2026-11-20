@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1, user-scalable=no" />
+<title>VEXEL · Oficina</title>
+<meta name="theme-color" content="#070b12" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<link rel="manifest" href="manifest.webmanifest" />
+<link rel="icon" href="icons/icon-192.png" sizes="192x192" />
+<link rel="stylesheet" href="css/app.css" />
+</head>
+<body>
+
+<header class="bar">
+  <div class="brand">
+    <span class="mark" aria-hidden="true"></span>
+    <span class="brand-text"><strong>VEXEL</strong><em>Oficina</em></span>
+  </div>
+  <div class="bar-right">
+    <span id="summary" class="summary">—</span>
+    <span id="live" class="live" data-source="loading"><i></i><span id="liveLabel">…</span></span>
+  </div>
+</header>
+
+<main id="stage">
+  <canvas id="scene" aria-label="Planta de la oficina VEXEL vista en corte: Ciro y nueve áreas en sus puestos. Toca un puesto para ver la ficha."></canvas>
+  <button id="back" class="back" type="button" hidden>◀ Oficina</button>
+  <button id="nowBtn" class="now" type="button" aria-pressed="false">Ahora</button>
+  <div id="a11y" class="sr-only" role="list" aria-label="Puestos de la oficina"></div>
+  <p id="hint" class="hint">Arrastra para mover · pellizca para acercar · toca un puesto</p>
+</main>
+
+<div id="strip" class="strip">—</div>
+<nav class="dock" aria-label="Equipo">
+  <div id="dock" class="dock-scroll"></div>
+</nav>
+
+<section id="sheet" class="sheet" hidden aria-live="polite">
+  <div class="grab" id="grab" aria-hidden="true"></div>
+  <div class="sheet-head">
+    <div class="who">
+      <span id="sheetAvatar" class="avatar" aria-hidden="true"></span>
+      <div>
+        <h2 id="sheetName">—</h2>
+        <p id="sheetRole">—</p>
+      </div>
+    </div>
+    <button id="sheetClose" class="close" type="button" aria-label="Cerrar ficha">✕</button>
+  </div>
+  <div class="sheet-body">
+    <div class="state-row">
+      <span id="sheetState" class="state">—</span>
+      <span id="sheetInbox" class="inbox">0 mensajes</span>
+    </div>
+    <div class="load" aria-hidden="true"><i id="loadBar"></i></div>
+    <div class="load-legend"><span>Carga</span><span id="loadLabel">—</span></div>
+    <dl class="facts">
+      <div><dt>Ahora</dt><dd id="sheetTask">Sin tarea registrada</dd></div>
+      <div><dt>Última entrega</dt><dd id="sheetDelivery">—</dd></div>
+      <div><dt>Actividad</dt><dd id="sheetActivity">—</dd></div>
+    </dl>
+    <a id="sheetChat" class="chat" href="#" rel="noopener">Abrir chat en Maus</a>
+    <p class="fine">Solo lectura: muestra el estado del equipo. No aprueba, no lanza tareas ni escribe nada.
+      <button id="wipe" class="link" type="button">Borrar datos guardados</button>
+    </p>
+  </div>
+</section>
+
+<div id="offline" class="offline" hidden>Estado guardado <span id="offlineAt"></span></div>
+<div id="toast" class="toast" hidden></div>
+
+<script type="module" src="js/office.js"></script>
+</body>
+</html>
