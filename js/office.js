@@ -39,8 +39,8 @@ const state = { data: null, agents: [], source: 'loading', draws: 0 };
 const cam = { yaw: YAW, tilt: ISO, zoom: 1, px: 0, py: 0, scale: 0.4 };
 const TOP_INSET = 74;          // alto de la cabecera
 const DOCK_INSET = 116;        // dock inferior + aire
-const OCC = 0.68;              // alto de la planta / alto útil (cabecera â†’ dock)
-let layout = { minX: 0, maxX: 0, minY: 0, maxY: 0, occ: 0 };
+const OCC = 0.58;              // alto de la planta / alto útil (cabecera â†’ dock)
+let layout = { minX: 0, maxX: 0, minY: 0, maxY: 0, occ: 0, px0: 0 };
 const usableHeight = () => Math.max(260, H - DOCK_INSET - TOP_INSET);
 let baseScale = 0.4, W = 0, H = 0, DPR = 1, originY = 0;
 let anim = 0;
@@ -76,7 +76,7 @@ function p1(x, y, z) {
 }
 function P(x, y, z = 0) {
   const q = p1(x, y, z);
-  return { x: W / 2 + cam.px + q.x * cam.scale, y: originY + cam.py + q.y * cam.scale };
+  return { x: W / 2 + cam.px + layout.px0 + q.x * cam.scale, y: originY + cam.py + q.y * cam.scale };
 }
 function poly(pts, fill, stroke, lw = 1) {
   ctx.beginPath();
@@ -636,9 +636,13 @@ function resize() {
   baseScale = Math.max(widthFit, heightFit);
   const availTop = TOP_INSET, availBottom = H - DOCK_INSET;
   originY = (availTop + availBottom) / 2 - ((minY + maxY) / 2) * baseScale;
+  // centrar en los puestos, no en las paredes: las 10 cabezas caben aunque se corte muro lateral
+  const headsX = Object.values(DESKS).map((d) => p1(d.x, d.y - 36, 104).x);
+  const cx = (Math.min(...headsX) + Math.max(...headsX)) / 2;
+  layout.px0 = clamp(-cx * baseScale, -W * 0.12, W * 0.12);
   cam.zoom = z; cam.px = pxx; cam.py = pyy;
   cam.scale = baseScale * z || s0 || baseScale;
-  layout = { minX, maxX, minY, maxY, occ: ((maxY - minY) * baseScale) / usableHeight() };
+  layout = { minX, maxX, minY, maxY, px0: layout.px0, occ: ((maxY - minY) * baseScale) / usableHeight() };
 }
 
 // ---------- dibujo ----------

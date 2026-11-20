@@ -35,25 +35,24 @@ recortado (la nuestra es responsive 375–390). La paleta sigue siendo VEXEL: os
 
 | Criterio | 390×844 | 375×812 |
 |---|---|---|
-| Alto de planta / alto útil | **0,680** (445 / 654) | **0,680** (423 / 622) |
-| Alto de figura sentada | **29,0 px** | **27,6 px** |
+| Alto de planta / alto útil | **0,580** (379 / 654) | **0,580** (361 / 622) |
+| Alto de figura sentada | **24,7 px** | **23,5 px** |
 | Etiquetas en reposo | **3** | **3** |
 | Solapes de etiquetas | **0** | **0** |
-| Separación mínima | **45,1 px** | **41,2 px** |
-| Puestos con el punto de toque en pantalla, sin arrastrar | **8 de 10** | **8 de 10** |
+| Separación mínima | **33,8 px** | **30,9 px** |
+| Puestos tocables sin arrastrar | **10 de 10** | **10 de 10** |
 | Nombres del dock truncados | **0 de 10** | **0 de 10** |
 
-Decisiones: la escala inicial la manda el alto (0,68 del alto útil), así que la planta se desborda
-unos 90 px por lado y se recorre con arrastre; Ops y Admin quedan fuera del encuadre inicial y se
-alcanzan con un arrastre corto o desde el dock. En reposo se ven como mucho 3 etiquetas: primero las
-de agentes activos o en riesgo y, si no hay, las de actividad más reciente (si no, con todo el equipo
-inactivo la escena se quedaba sin nombres). Al acercar aparecen las de todas las cabezas visibles
-(7 a 1,36×, sin solapes). El dock usa nombres cortos
-propios (Ops, Admin, Diseño, Finanzas…) para que ninguno se corte.
+Decisiones: la escala inicial la manda el alto (0,58 del alto útil). A esa escala las 10
+cabezas caben en 390 y 375; el encuadre se centra en los puestos (no en las paredes), así que los
+muros laterales se cortan y la escena se lee como interior. En reposo se ven 3 etiquetas como máximo:
+primero las de agentes activos o en riesgo y, si no hay, las de actividad más reciente. Al acercar
+aparecen las de todas las cabezas visibles (7 a 1,36×). El dock usa nombres cortos propios (Ops,
+Admin, Diseño, Finanzas…) para que ninguno se corte.
 
-La colocación es codiciosa: se prueba la posición natural sobre la cabeza y solo se empuja si la
-guía sigue midiendo ≤ 40 px; si no cabe con guía corta, esa etiqueta no se pinta, nunca se apila.
-En las capturas las tres guías miden 10 px.
+La colocación de etiquetas es codiciosa: se prueba la posición natural sobre la cabeza y solo se
+empuja si la guía sigue midiendo ≤ 40 px; si no cabe con guía corta, esa etiqueta no se pinta, nunca
+se apila. En las capturas las tres guías miden 10 px.
 
 ## A vs B, con números medidos (no estimados)
 
@@ -103,7 +102,7 @@ node tools/test-offline.mjs      # cae la red de verdad y comprueba el estado gu
 
 ## Siguiente paso
 
-1. Integración: montar `/movil` en `server.mjs` de la oficina (plan de Operaciones) y PIN + HTTPS
-   antes de salir de la LAN.
+1. Integración: montar `/movil` en `server.mjs` de la oficina (plan de Operaciones). Para publicar
+   fuera de la LAN, `publish/server-pin.mjs` ya trae PIN y sesión; el HTTPS lo pone el host.
 2. Medir en un Android de gama media y un iPhone: draws/s, batería 10 min y arranque.
 3. Decidir si se paga el salto a 60 fps o se queda el diseño a 30.

@@ -1,7 +1,7 @@
 // Service worker de VEXEL · Oficina (solo lectura).
 // Estrategia: shell cache-first, estado network-first con último estado guardado.
 const PREFIX = 'vexel-oficina';          // solo tocamos cachés de esta app
-const VERSION = PREFIX + '-cortada-v2';
+const VERSION = PREFIX + '-cortada-v3';
 const SHELL = [
   './',
   'index.html',
